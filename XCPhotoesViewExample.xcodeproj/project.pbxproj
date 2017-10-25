@@ -19,6 +19,7 @@
 		1E0890481E7670E900FE43FF /* XCPhotoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E0890471E7670E900FE43FF /* XCPhotoItem.m */; };
 		1E08904B1E7671FB00FE43FF /* XCPhotoesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08904A1E7671FB00FE43FF /* XCPhotoesView.m */; };
 		1E08904E1E76732700FE43FF /* XCPhotoesConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E08904D1E76732700FE43FF /* XCPhotoesConfigure.m */; };
+		1E605F761FA055FE006F06D1 /* UIView+XCPhotoesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E605F751FA055FE006F06D1 /* UIView+XCPhotoesView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		1E08904A1E7671FB00FE43FF /* XCPhotoesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCPhotoesView.m; sourceTree = "<group>"; };
 		1E08904C1E76732700FE43FF /* XCPhotoesConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCPhotoesConfigure.h; sourceTree = "<group>"; };
 		1E08904D1E76732700FE43FF /* XCPhotoesConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCPhotoesConfigure.m; sourceTree = "<group>"; };
+		1E605F741FA055FE006F06D1 /* UIView+XCPhotoesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XCPhotoesView.h"; sourceTree = "<group>"; };
+		1E605F751FA055FE006F06D1 /* UIView+XCPhotoesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XCPhotoesView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,8 @@
 				1E08904A1E7671FB00FE43FF /* XCPhotoesView.m */,
 				1E08904C1E76732700FE43FF /* XCPhotoesConfigure.h */,
 				1E08904D1E76732700FE43FF /* XCPhotoesConfigure.m */,
+				1E605F741FA055FE006F06D1 /* UIView+XCPhotoesView.h */,
+				1E605F751FA055FE006F06D1 /* UIView+XCPhotoesView.m */,
 			);
 			path = XCPhotoesView;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				1E0890171E766FD400FE43FF /* ViewController.m in Sources */,
 				1E08904B1E7671FB00FE43FF /* XCPhotoesView.m in Sources */,
 				1E0890141E766FD400FE43FF /* AppDelegate.m in Sources */,
+				1E605F761FA055FE006F06D1 /* UIView+XCPhotoesView.m in Sources */,
 				1E0890481E7670E900FE43FF /* XCPhotoItem.m in Sources */,
 				1E0890111E766FD400FE43FF /* main.m in Sources */,
 			);

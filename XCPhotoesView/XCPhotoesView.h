@@ -19,6 +19,11 @@
 
 @interface XCPhotoesView : UIView
 
+
+/** 👀 获取内容的高度 👀 */
+@property (copy, nonatomic) void(^fetchContentHeightBlock)(XCPhotoesView *photoesView, CGFloat contentH);
+
+
 /**
  *  返回一个图片集合视图
  *
@@ -60,44 +65,5 @@
 - (void)addPhotoesWithUrls:(NSArray<NSString *> *)urls;
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

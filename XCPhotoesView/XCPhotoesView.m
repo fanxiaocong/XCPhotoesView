@@ -19,6 +19,8 @@
 #import "XCPhotoItem.h"
 #import "XCPhotoModel.h"
 
+#import "UIView+XCPhotoesView.h"
+
 
 #define SCREEN_WIDTH      [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT     [UIScreen mainScreen].bounds.size.height
@@ -136,6 +138,21 @@
             }
             break;
         }
+    }
+    
+    CGFloat photoesH = self.addButton.bottom + self.configure.photoesInsets.bottom;
+    
+    if (self.subviews.count > self.configure.maxCount)
+    {
+        photoesH -= (itemWH + marginX);
+    }
+    
+    self.height = photoesH;
+    
+    /// 返回 内容的高度
+    if (self.fetchContentHeightBlock)
+    {
+        self.fetchContentHeightBlock(self, self.height);
     }
 }
 
@@ -394,17 +411,6 @@
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
 
 
 
