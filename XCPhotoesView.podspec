@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 	XCPhotoesView 图片排列框架
                    DESC
 
-  s.homepage     = "http://github.com/fanxiaocong/XCPhotoesView"
+  s.homepage     = "http://www.github.com/fanxiaocong/XCPhotoesView"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://github/fanxiaocong/XCPhotoesView.git", :tag => "#{s.version}" }
+  s.source       = { :git => "http://www.github/fanxiaocong/XCPhotoesView.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
