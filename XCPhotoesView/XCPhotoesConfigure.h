@@ -40,6 +40,11 @@ typedef NS_ENUM(NSInteger, XCPhotoesViewType)
 /** 👀 视图 上、左、下、右 的距离：默认 15 👀 */
 @property (assign, nonatomic) UIEdgeInsets photoesInsets;
 
+/** 👀 添加按钮的图片 👀 */
+@property (strong, nonatomic) UIImage *addImage;
+
+/** 👀 删除按钮的图片 👀 */
+@property (strong, nonatomic) UIImage *deleteImage;
 
 /**
  默认配置
@@ -47,15 +52,5 @@ typedef NS_ENUM(NSInteger, XCPhotoesViewType)
 + (instancetype)defaultConfigure;
 
 @end
-
-
-
-
-
-
-
-
-
-
 
 

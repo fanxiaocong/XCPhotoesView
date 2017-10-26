@@ -31,7 +31,11 @@
         [mArr addObject:img];
     }
     
-    XCPhotoesView *photoesView = [XCPhotoesView photoesViewWithImages:mArr configure:NULL didClickAddButtonHnadle:^(XCPhotoesView *photoesView) {
+    XCPhotoesConfigure *configure = [XCPhotoesConfigure defaultConfigure];
+    configure.deleteImage = [UIImage imageNamed:@"icon_delete_grey_default"];
+    configure.addImage    = [UIImage imageNamed:@"icon_add_gy_xl"];
+    
+    XCPhotoesView *photoesView = [XCPhotoesView photoesViewWithImages:mArr configure:configure didClickAddButtonHnadle:^(XCPhotoesView *photoesView) {
         
         NSLog(@"点击了 添加 按钮");
         

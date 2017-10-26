@@ -58,12 +58,18 @@
     [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClick)]];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setImage:[UIImage imageNamed:@"icon_delete_grey_default"] forState:UIControlStateNormal];
     [button sizeToFit];
     [button addTarget:self action:@selector(didClickDeleteButton) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     
     self.deleteButton = button;
+}
+
+- (void)setDeleteImage:(UIImage *)deleteImage
+{
+    _deleteImage = deleteImage;
+    
+    [self.deleteButton setImage:deleteImage forState:UIControlStateNormal];
 }
 
 - (void)setEdit:(BOOL)edit
@@ -118,25 +124,6 @@
 
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

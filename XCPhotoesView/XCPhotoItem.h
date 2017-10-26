@@ -19,6 +19,9 @@
 /** 👀 是否可编辑（如果可编辑：则右上角有删除按钮；如果不可编辑：则右上角没有删除按钮） 👀 */
 @property (assign, nonatomic, getter=canEdit) BOOL edit;
 
+/** 👀 删除按钮 👀 */
+@property (strong, nonatomic) UIImage *deleteImage;
+
 /** 👀 点击了 item 左上角的删除按钮的回调 👀 */
 @property (copy, nonatomic) void(^didClickDeleteButtonHandle)(XCPhotoItem *item);
 

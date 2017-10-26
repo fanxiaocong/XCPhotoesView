@@ -73,7 +73,6 @@
     self.userInteractionEnabled = YES;
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [addButton setImage:[UIImage imageNamed:@"icon_add_gy_xl"] forState:UIControlStateNormal];
     [addButton addTarget:self action:@selector(onClickedAddButton) forControlEvents:UIControlEventTouchUpInside];
     addButton.layer.borderColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1.f].CGColor;
     addButton.layer.borderWidth = .5f;
@@ -175,6 +174,8 @@
     for (XCPhotoModel *model in models)
     {
         XCPhotoItem *item = [[XCPhotoItem alloc] init];
+        
+        item.deleteImage = self.configure.deleteImage;
         
         if (model.photoImage)       // 如果存在 image
         {
@@ -352,6 +353,9 @@
     photoesView.photoWH    = itemWH;
     photoesView.configure  = configure;
     photoesView.models     = models;
+    
+    [photoesView.addButton setImage:configure.addImage forState:UIControlStateNormal];
+    
     
     photoesView.didClickDeleteButtonHandle = didClickDeleteButtonHandle;
     photoesView.didClickAddButtonHnadle    = didClickAddButtonHandle;
