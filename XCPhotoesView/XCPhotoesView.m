@@ -53,6 +53,9 @@
 
 
 @implementation XCPhotoesView
+{
+    NSArray *_items;
+}
 
 #pragma mark - 👀 Init Method 👀 💤
 
@@ -115,7 +118,6 @@
         }
         
         view.frame = CGRectMake(itemX, itemY, itemWH, itemWH);
-        
     }
     
     switch (self.configure.photoesViewType)
@@ -171,20 +173,19 @@
         }
     }
     
+    NSMutableArray *mArr = [NSMutableArray array];
+    
     for (XCPhotoModel *model in models)
     {
         XCPhotoItem *item = [[XCPhotoItem alloc] init];
+        
+        [mArr addObject:item];
         
         item.deleteImage = self.configure.deleteImage;
         
         if (model.photoImage)       // 如果存在 image
         {
             item.image = model.photoImage;
-        }
-        else if (model.photoUrl)   // 如果存在 url
-        {
-#warning 此处省略加载网络图片
-//            [item sd_setImageWithURL:[NSURL URLWithString:model.photoUrl]];
         }
         
         // 添加图片
@@ -214,6 +215,9 @@
                 break;
             }
         }
+        
+        // 记录 item
+        _items = mArr;
         
         // 点击了 item 本身
         item.didClickItemHandle = ^(XCPhotoItem *item){
@@ -321,6 +325,22 @@
     }];
     
     self.models = models;
+}
+
+- (void)configureWebImage:(void(^)(UIImageView *imageView, NSURL *URL))webImgconfig
+{
+    /// 加载网页图片
+    for (NSInteger i = 0; i < _items.count; i ++)
+    {
+        XCPhotoItem *item = _items[i];
+        XCPhotoModel *model = self.models[i];
+        
+        if (!model.photoUrl)    continue;
+        
+        if (webImgconfig) {
+            webImgconfig(item, [NSURL URLWithString:model.photoUrl]);
+        }
+    }
 }
 
 #pragma mark - 🔒 👀 Privite Method 👀

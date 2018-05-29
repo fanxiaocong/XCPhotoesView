@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-
-#import "XCPhotoesView.h"
+#import "TTTViewController.h"
 
 @interface ViewController ()
 
@@ -22,33 +21,17 @@
     [self setupUI];
 }
 
+#pragma mark - 🚀 ⛳️ Navigation Jump ⛳️
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    TTTViewController *vc = segue.destinationViewController;
+    vc.isLocal = [segue.identifier isEqualToString:@"Local"];
+}
+
 - (void)setupUI
 {
-    NSMutableArray *mArr = [NSMutableArray array];
-    for (NSInteger i=1; i<10; i ++)
-    {
-        UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"%zi.jpg", i]];
-        [mArr addObject:img];
-    }
-    
-    XCPhotoesConfigure *configure = [XCPhotoesConfigure defaultConfigure];
-    configure.deleteImage = [UIImage imageNamed:@"icon_delete_grey_default"];
-    configure.addImage    = [UIImage imageNamed:@"icon_add_gy_xl"];
-    
-    XCPhotoesView *photoesView = [XCPhotoesView photoesViewWithImages:mArr configure:configure didClickAddButtonHnadle:^(XCPhotoesView *photoesView) {
-        
-        NSLog(@"点击了 添加 按钮");
-        
-    } didClickDeleteButtonHandle:^(XCPhotoesView *photoesView, NSInteger index) {
-        
-        NSLog(@"点击了 删除 按钮");
-        
-    } didSelectItemHandle:^(XCPhotoesView *photoesView, NSInteger index) {
-        
-        NSLog(@"%@", [NSString stringWithFormat:@"选中了%zi张照片", index]);
-    }];
-    
-    [self.view addSubview:photoesView];
+
 }
 
 

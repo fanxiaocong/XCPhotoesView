@@ -58,7 +58,7 @@
     [self addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didClick)]];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button sizeToFit];
+    button.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [button addTarget:self action:@selector(didClickDeleteButton) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:button];
     

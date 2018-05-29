@@ -64,6 +64,11 @@
  */
 - (void)addPhotoesWithUrls:(NSArray<NSString *> *)urls;
 
+/**
+ *  加载网络图片
+ */
+- (void)configureWebImage:(void(^)(UIImageView *imageView, NSURL *URL))webImgconfig;
+
 @end
 
 
