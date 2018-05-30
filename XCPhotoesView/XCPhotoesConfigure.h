@@ -46,6 +46,9 @@ typedef NS_ENUM(NSInteger, XCPhotoesViewType)
 /** 👀 删除按钮的图片 👀 */
 @property (strong, nonatomic) UIImage *deleteImage;
 
+/** 👀 视图宽度：默认 屏幕宽度 👀 */
+@property (assign, nonatomic) CGFloat photoesWidth;
+
 /**
  默认配置
  */

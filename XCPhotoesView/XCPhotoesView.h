@@ -25,7 +25,7 @@
 
 
 /**
- *  返回一个图片集合视图
+ *  根据 images 数组返回一个图片集合视图
  *
  *  @param images                      视图image对象数组
  *  @param configure                   视图参数配置选项（传空为默认配置）
@@ -40,7 +40,7 @@
                      didSelectItemHandle:(void(^)(XCPhotoesView *photoesView, NSInteger index))didSelectItemHandle;
 
 /**
- *  返回一个图片集合视图
+ *  根据 URL 数组返回一个图片集合视图
  *
  *  @param URLs                        视图image对象数组
  *  @param configure                   视图参数配置选项（传空为默认配置）

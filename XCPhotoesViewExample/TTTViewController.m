@@ -55,6 +55,8 @@
     XCPhotoesConfigure *configure = [XCPhotoesConfigure defaultConfigure];
     configure.deleteImage = [UIImage imageNamed:@"icon_delete_grey_default"];
     configure.addImage    = [UIImage imageNamed:@"icon_add_gy_xl"];
+    configure.maxCount    = 8;
+    configure.photoesWidth = 300;
     
     XCPhotoesView *photoesView = [XCPhotoesView photoesViewWithImages:mArr configure:configure didClickAddButtonHnadle:^(XCPhotoesView *photoesView) {
         
@@ -93,6 +95,7 @@
     configure.deleteImage = [UIImage imageNamed:@"icon_delete_grey_default"];
     configure.addImage    = [UIImage imageNamed:@"icon_add_gy_xl"];
     configure.photoesViewType = XCPhotoesViewTypeDisPlay;
+    configure.photoesWidth = 300;
     
     XCPhotoesView *photoesView = [XCPhotoesView photoesViewWithURLs:URLs configure:configure didClickAddButtonHnadle:^(XCPhotoesView *photoesView) {
         

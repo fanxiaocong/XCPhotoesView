@@ -17,8 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    [self setupUI];
 }
 
 #pragma mark - 🚀 ⛳️ Navigation Jump ⛳️
@@ -27,11 +25,6 @@
 {
     TTTViewController *vc = segue.destinationViewController;
     vc.isLocal = [segue.identifier isEqualToString:@"Local"];
-}
-
-- (void)setupUI
-{
-
 }
 
 

@@ -22,10 +22,6 @@
 #import "UIView+XCPhotoesView.h"
 
 
-#define SCREEN_WIDTH      [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT     [UIScreen mainScreen].bounds.size.height
-
-
 @interface XCPhotoesView ()
 
 /** 👀 添加按钮 👀 */
@@ -143,7 +139,8 @@
     
     CGFloat photoesH = self.addButton.bottom + self.configure.photoesInsets.bottom;
     
-    if (self.subviews.count > self.configure.maxCount)
+    if (self.subviews.count > self.configure.maxCount   &&
+        (count % column) == 1)
     {
         photoesH -= (itemWH + marginX);
     }
@@ -254,8 +251,10 @@
     
     [images enumerateObjectsUsingBlock:^(UIImage * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        XCPhotoModel *model = [XCPhotoModel photoModelWithPhotoImage:obj];
-        [models addObject:model];
+        if (idx < configure.maxCount) {
+            XCPhotoModel *model = [XCPhotoModel photoModelWithPhotoImage:obj];
+            [models addObject:model];
+        }
     }];
     
     return [self photoesViewWithModels:models
@@ -284,8 +283,10 @@
     
     [URLs enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
-        XCPhotoModel *model = [XCPhotoModel photoModelWithUrl:obj];
-        [models addObject:model];
+        if (idx < configure.maxCount) {
+            XCPhotoModel *model = [XCPhotoModel photoModelWithUrl:obj];
+            [models addObject:model];
+        }
     }];
     
     return [self photoesViewWithModels:models
@@ -363,12 +364,12 @@
     configure = configure ?: [XCPhotoesConfigure defaultConfigure];
     
     // 计算每张图片的宽、高
-    CGFloat itemWH = (SCREEN_WIDTH - configure.photoesInsets.left - configure.photoesInsets.right - (configure.column - 1) * configure.itemMargin) / configure.column;
+    CGFloat itemWH = (configure.photoesWidth - configure.photoesInsets.left - configure.photoesInsets.right - (configure.column - 1) * configure.itemMargin) / configure.column;
     
     // 计算视图的高
     CGFloat photoesH = ((configure.maxCount-1) / configure.column + 1) * (itemWH + configure.itemMargin) - configure.itemMargin + configure.photoesInsets.top + configure.photoesInsets.bottom;
     
-    XCPhotoesView *photoesView = [[XCPhotoesView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, photoesH)];
+    XCPhotoesView *photoesView = [[XCPhotoesView alloc] initWithFrame:CGRectMake(0, 0, configure.photoesWidth, photoesH)];
     
     photoesView.photoWH    = itemWH;
     photoesView.configure  = configure;

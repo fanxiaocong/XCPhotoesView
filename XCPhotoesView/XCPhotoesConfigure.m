@@ -27,6 +27,7 @@
     configure.maxCount        = 9;
     configure.itemMargin      = 10;
     configure.photoesInsets   = UIEdgeInsetsMake(15, 15, 15, 15);
+    configure.photoesWidth    = [UIScreen mainScreen].bounds.size.width;
     
     return configure;
 }
