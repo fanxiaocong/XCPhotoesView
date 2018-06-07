@@ -73,8 +73,6 @@
     
     UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [addButton addTarget:self action:@selector(onClickedAddButton) forControlEvents:UIControlEventTouchUpInside];
-    addButton.layer.borderColor = [UIColor colorWithRed:226/255.0 green:226/255.0 blue:226/255.0 alpha:1.f].CGColor;
-    addButton.layer.borderWidth = .5f;
     self.addButton = addButton;
     [self addSubview:addButton];
 }
